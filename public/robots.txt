@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ar.hooanime.com
+
+# Sitemaps
+Sitemap: https://ar.hooanime.com/api/seo/sitemaps/sitemap_index.xml

@@ -1,0 +1,25 @@
+.pagination * {
+    @apply join-item;
+    @apply btn;
+    @apply btn-accent;
+    list-style: none;
+    border-radius: 0;
+    padding: 0;
+}
+.pagination > *:first-child{
+    @apply rounded-tl-lg;
+    @apply rounded-bl-lg;
+}
+.pagination > *:last-child{
+    @apply rounded-tr-lg;
+    @apply rounded-br-lg;
+}
+
+
+.pagination > li > a{
+    padding: 1em;
+}
+
+.pagination > li > span{
+    padding: 1em;
+}
