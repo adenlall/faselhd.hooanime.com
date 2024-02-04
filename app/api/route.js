@@ -7,7 +7,7 @@ export const revalidate = 10000;
 
 export async function GET(){
 
-        const response = await fetch(process.env.BASEURL, { next: { revalidate: Number(process.env.REVALIDATE) } });
+        const response = await fetch(process.env.BASEURL, { next: { revalidate: Number(process.env.LONG_REVALIDATE) } });
         const data = await response.text();
 
         const $ = load(data);
