@@ -6,8 +6,28 @@ export const revalidate = 10000;
 
 
 export async function GET(){
-
-        const response = await fetch(process.env.BASEURL, { next: { revalidate: Number(process.env.LONG_REVALIDATE) } });
+        let headers = new Headers({
+            'Host': 'www.faselhd.link',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:121.0) Gecko/20100101 Firefox/121.0',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'DNT': '1',
+            'Connection': 'keep-alive',
+            'Cookie': 'fcuid=d814a65d1c8c415a83764787c1950e9fd7278d47',
+            'Upgrade-Insecure-Requests': '1',
+            'Sec-Fetch-Dest': 'document',
+            'Sec-Fetch-Mode': 'navigate',
+            'Sec-Fetch-Site': 'cross-site',
+            'Pragma': 'no-cache',
+            'Cache-Control': 'no-cache',
+        });
+    
+        const response = await fetch(process.env.BASEURL, {
+             next: { revalidate: Number(process.env.LONG_REVALIDATE) },
+             method: "GET",
+             headers: headers
+        });
         const data = await response.text();
 
         const $ = load(data);
